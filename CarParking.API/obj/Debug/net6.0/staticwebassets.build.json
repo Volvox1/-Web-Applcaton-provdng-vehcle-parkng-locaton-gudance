@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Q7SVqDLiDzKOZFpc17FabAPRS2uM8mBFflgjF+mCCys=",
+  "Source": "CarParking.API",
+  "BasePath": "_content/CarParking.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
