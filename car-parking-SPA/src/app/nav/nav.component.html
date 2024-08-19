@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="home" routerLinkActive="active">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated" >
+          <a class="nav-link active" routerLink="addcarinfo" routerLinkActive="active">Add Car
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="register" routerLinkActive="active">Register
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        
+      </ul>
+      <form *ngIf="!isAuthenticated" #loginForm="ngForm" (ngSubmit)="login()" class="d-flex">
+        <input class="form-control me-sm-2" name="UserName" 
+        [(ngModel)]="loginUser.UserName" required type="text" placeholder="User Name">
+        <input class="form-control me-sm-2" name="password" 
+        [(ngModel)]="loginUser.password" required  type="password" placeholder="password">
+        <button class="btn btn-secondary my-2 my-sm-0" [disabled]="!loginForm.valid" type="submit">Login</button>
+      </form>
+      <button class="btn btn-secondary my-2 my-sm-0" *ngIf="isAuthenticated" (click)="logOut()" type="submit">LogOut</button>
+    </div>
+  </div>
+</nav>

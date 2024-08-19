@@ -1,0 +1,38 @@
+<section class="vh-100 bg-image" style= "background-size: cover;background-image: url('https://t4.ftcdn.net/jpg/04/44/26/71/360_F_444267195_uyj0oiqZuIwwCkfvL90dI34T9z0dahnr.jpg');">
+    
+<div class="container" >
+    <br>
+<h1 class="mb-3">Car Informations</h1>
+<table class="table" *ngIf="CarInfoss && CarInfoss.length>0">
+    <thead>
+        <tr>
+            <th>Car Id</th>
+            <th>Car Plate</th>
+            <th>Car Owner</th>
+            <th>Type of Car</th>
+            <th>Date of Joining</th>
+            <th>Parking Lot Number</th>
+            <th>Residence time</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let CarInfoss of CarInfoss">
+            <td>{{CarInfoss.carId}}</td>
+            <td>{{CarInfoss.carPlate}}</td>
+            <td>{{CarInfoss.carOwner}}</td>
+            <td>{{CarInfoss.typeofCar}}</td>
+            <td>{{CarInfoss.dateofJoining}}</td>
+            <td>{{CarInfoss.parkingLotNumber}}</td>
+            <td>{{CarInfoss.residencetime}}</td>
+            <td *ngIf="isAuthenticated"><a [routerLink]="['/editcarinfo','edit',CarInfoss.carId]">View</a></td>
+        </tr>
+    </tbody>
+
+</table>
+<p *ngIf="!CarInfoss || CarInfoss.length<=0">no car Informations found</p>
+</div>
+<br>
+<hr>
+<img style="display: block; margin-left: auto; margin-right: auto; width: 40%; border-radius: 15%;" src="https://lirp.cdn-website.com/md/unsplash/dms3rep/multi/opt/photo-1506521781263-d8422e82f27a-1920w.jpg" alt="lot">
+</section>

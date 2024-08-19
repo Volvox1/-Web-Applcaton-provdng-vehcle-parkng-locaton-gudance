@@ -1,0 +1,48 @@
+<section class="vh-100 bg-image" style= "background-size: cover; background-image: url('https://t4.ftcdn.net/jpg/02/89/47/79/360_F_289477910_DTFjhnNR3fxhcOqvuRanrHgyh5cNmucq.jpg');">
+<br>
+<div class="container">
+  <h1 class="mb-3"><b>Edit Car Information</b></h1>
+  
+  
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="updatecarinfo()" >
+        <div class="mb-3">
+          <label for="carId">CarId</label>
+          <input type="number" class="form-control" id="carId" name="carId" readonly [(ngModel)]="CarDetails.carId" placeholder="Enter a Car Plate">
+          
+        </div>
+        
+    <div class="mb-3">
+      <label for="carplate">Car Plate</label>
+      <input type="text" class="form-control" id="carplate" name="carPlate" [(ngModel)]="CarDetails.carPlate" placeholder="Enter a Car Plate (7 or 8 long)">
+      
+    </div>
+    <div class="mb-3">
+      <label for="carowner">Car Owner</label>
+      <input type="text" class="form-control" id="carowner" name="carOwner" [(ngModel)]="CarDetails.carOwner" placeholder="Enter the name of the owner">
+    </div>
+  
+    <div class="mb-3">
+      <label for="typeofcar">Type of Car</label>
+      <input type="text" class="form-control" id="typeofcar" name="typeofCar"  [(ngModel)]="CarDetails.typeofCar" placeholder="Enter type of the car (disabled or normal)">
+    </div>
+  
+    <div class="mb-3">
+      <label for="dateofjoining">Date of Joining</label>
+      <input type="text" class="form-control" id="dateofjoining" name="dateofJoining" [(ngModel)]="CarDetails.dateofJoining" placeholder="Enter Date">
+    </div>
+    <div class="mb-3">
+      <label for="residencetime">Residencetime</label>
+      <input type="text" class="form-control" id="residencetime" name="residencetime" [(ngModel)]="CarDetails.residencetime" placeholder="Enter Time (short or long)">
+    </div>
+  
+    <button type="submit" class="btn btn-primary" *ngIf="isAuthenticated">Save</button>
+    <button type="button" class="btn btn-danger" style="margin-left: 5px;" 
+    (click)="deletecarinfo(CarDetails.carId)" *ngIf="isAuthenticated">Delete</button>
+  </form>
+    </div>
+  </div>
+  
+  </div>
+  </section>
